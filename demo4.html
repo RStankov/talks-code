@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+  <head>
+    <meta charset="utf-8">
+    <title>Demo 4</title>
+    <link rel="stylesheet" href="stylesheets/reset.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="stylesheets/demo.css" type="text/css" media="screen">
+  </head>
+  <body ng-controller="demoCtrl">
+    <article>
+      <ul>
+        <li ng-repeat="person in people">{{person.name}}</li>
+        <li>
+          <form ng-submit="addPerson();">
+            <input type="text" ng-model="newPerson" />
+          </form>
+        </li>
+      </ul>
+    </article>
+    <script src="bower_components/angular/angular.js" type="text/javascript"></script>
+    <script src="javascripts/demo4.js" type="text/javascript"></script>
+  </body>
+</html>
+
