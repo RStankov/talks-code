@@ -12,10 +12,10 @@
     </header>
     <article>
       <ul>
-        <li ng-repeat="person in people | filter:search">{{person.name}}</li>
+        <li ng-repeat="task in tasks | filter:search">{{task.text}}</li>
         <li>
-          <form ng-submit="addPerson();">
-            <input type="text" ng-model="newPerson" />
+          <form ng-submit="createTask();">
+            <input type="text" ng-model="newTask" />
           </form>
         </li>
       </ul>
