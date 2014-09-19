@@ -1,7 +1,7 @@
 Angular.js
 ===============
 
-Demo code for my Angular.js talk at [PlovdivConf 2014](plovdivconf.com/archive/2014).
+Demo code for my Angular.js talk at [PlovdivConf 2014](http://plovdivconf.com/archive/2014).
 
 Links:
 
