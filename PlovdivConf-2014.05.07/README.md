@@ -7,3 +7,10 @@ Links:
 
 * [Slides](https://speakerdeck.com/rstankov/angular-js)
 * [Video](https://www.youtube.com/watch?v=2_LiCb-9uyw)
+
+
+Installation:
+
+```
+bower install
+```
