@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="Demo">
+  <head>
+    <meta charset="utf-8">
+    <title>Final demo</title>
+    <link href="stylesheets/reset.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/application.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="navbar-default" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <a ui-sref="dashboard" class="navbar-brand">Demo</a>
+        </div>
+        <div role="navigation">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="demo1.html">Demo 1</a></li>
+            <li><a href="demo2.html">Demo 2</a></li>
+            <li><a href="demo3.html">Demo 3</a></li>
+            <li><a href="demo4.html">Demo 4</a></li>
+            <li><a href="demo5.html">Demo 5</a></li>
+            <li class="active"><a href="demo_final.html">Final</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <form class="form-inline pull-right" role="form">
+            <div class="form-group has-feedback">
+              <input type="search" class="form-control" ng-model="search">
+              <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </div>
+          </form>
+          <h5>Messages</h5>
+        </div>
+        <div class="panel-body" ng-controller="MessagesCtrl">
+          <ul class="media-list">
+            <li class="media" ng-repeat="message in messages | filter:search">
+              <img class="media-object pull-left img-circle" ng-src="{{::message.user.avatar}}" alt="{{message.user.name}} avatar">
+              <div class="media-body">
+                <h5 class="media-heading">{{::message.user.name}}:</h5>
+                <p>{{::message.text}}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="panel-footer" ng-controller="PostCtrl">
+          <form role="form" ng-submit="post();">
+            <input type="text" class="form-control" placeholder="New message..." ng-model="message">
+          </form>
+        </div>
+      </div>
+
+    </main>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="javascripts/demo_final.js"></script>
+  </body>
+</html>
