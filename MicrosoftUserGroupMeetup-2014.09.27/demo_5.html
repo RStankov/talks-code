@@ -2,7 +2,7 @@
 <html ng-app="Demo">
   <head>
     <meta charset="utf-8">
-    <title>Final demo</title>
+    <title>Demo 5</title>
     <link href="stylesheets/reset.css" rel="stylesheet">
     <link href="stylesheets/bootstrap.css" rel="stylesheet">
     <link href="stylesheets/application.css" rel="stylesheet">
@@ -19,8 +19,8 @@
             <li><a href="demo_2.html">Demo 2</a></li>
             <li><a href="demo_3.html">Demo 3</a></li>
             <li><a href="demo_4.html">Demo 4</a></li>
-            <li><a href="demo_5.html">Demo 5</a></li>
-            <li class="active"><a href="demo_final.html">Final</a></li>
+            <li class="active"><a href="demo_5.html">Demo 5</a></li>
+            <li><a href="demo_final.html">Final</a></li>
           </ul>
         </div>
       </div>
@@ -41,10 +41,8 @@
         <div class="panel-body" ng-controller="MessagesCtrl">
           <ul class="media-list">
             <li class="media" ng-repeat="message in messages | filter:search">
-              <img class="media-object pull-left img-circle" ng-src="{{::message.user.avatar}}" alt="{{message.user.name}} avatar">
               <div class="media-body">
-                <h5 class="media-heading">{{::message.user.name}}:</h5>
-                <p>{{::message.text}}</p>
+                <p>{{message.text}}</p>
               </div>
             </li>
           </ul>
@@ -59,6 +57,6 @@
     </main>
 
     <script src="bower_components/angular/angular.js"></script>
-    <script src="javascripts/demo_final.js"></script>
+    <script src="javascripts/demo_5.js"></script>
   </body>
 </html>
