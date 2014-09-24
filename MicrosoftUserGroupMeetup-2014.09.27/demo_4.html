@@ -2,7 +2,7 @@
 <html ng-app="Demo">
   <head>
     <meta charset="utf-8">
-    <title>Demo 5</title>
+    <title>Demo 4</title>
     <link href="stylesheets/reset.css" rel="stylesheet">
     <link href="stylesheets/bootstrap.css" rel="stylesheet">
     <link href="stylesheets/application.css" rel="stylesheet">
@@ -18,8 +18,8 @@
             <li><a href="demo_1.html">Demo 1</a></li>
             <li><a href="demo_2.html">Demo 2</a></li>
             <li><a href="demo_3.html">Demo 3</a></li>
-            <li><a href="demo_4.html">Demo 4</a></li>
-            <li class="active"><a href="demo_5.html">Demo 5</a></li>
+            <li class="active"><a href="demo_4.html">Demo 4</a></li>
+            <li><a href="demo_5.html">Demo 5</a></li>
             <li><a href="demo_final.html">Final</a></li>
           </ul>
         </div>
@@ -30,17 +30,11 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <form class="form-inline pull-right" role="form">
-            <div class="form-group has-feedback">
-              <input type="search" class="form-control" ng-model="search">
-              <span class="glyphicon glyphicon-search form-control-feedback"></span>
-            </div>
-          </form>
           <h5>Messages</h5>
         </div>
         <div class="panel-body" ng-controller="MessagesCtrl">
           <ul class="media-list">
-            <li class="media" ng-repeat="message in messages | filter:search">
+            <li class="media" ng-repeat="message in messages">
               <div class="media-body">
                 <p>{{message.text}}</p>
               </div>
