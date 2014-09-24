@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="Demo">
+  <head>
+    <meta charset="utf-8">
+    <title>Demo 2</title>
+    <link href="stylesheets/reset.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/application.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="navbar-default" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <a ui-sref="dashboard" class="navbar-brand">Demo</a>
+        </div>
+        <div role="navigation">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="demo_1.html">Demo 1</a></li>
+            <li class="active"><a href="demo_2.html">Demo 2</a></li>
+            <li><a href="demo_3.html">Demo 3</a></li>
+            <li><a href="demo_4.html">Demo 4</a></li>
+            <li><a href="demo_5.html">Demo 5</a></li>
+            <li><a href="demo_final.html">Final</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" ng-controller="MessagesCtrl">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h5>Messages</h5>
+        </div>
+        <div class="panel-body">
+          <ul class="media-list">
+            <li class="media" ng-repeat="message in messages">
+              <div class="media-body">
+                <p>{{message.text}}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="panel-footer">
+          <form role="form" ng-submit="post();">
+            <input type="text" class="form-control" placeholder="New message..." ng-model="message">
+          </form>
+        </div>
+      </div>
+
+    </main>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="javascripts/demo_2.js"></script>
+  </body>
+</html>
