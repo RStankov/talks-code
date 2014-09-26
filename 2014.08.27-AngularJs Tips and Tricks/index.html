@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html ng-app="Demo">
+  <head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <link href="stylesheets/reset.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap-theme.css" rel="stylesheet">
+    <link href="stylesheets/application.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="navbar-default" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <a ui-sref="dashboard" class="navbar-brand">Demo</a>
+        </div>
+        <div role="navigation">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a ui-sref-active="active" ui-sref="settings.profile" class="ng-binding">Hi, {{user.name}}</a></li>
+            <li><a ui-sref-active="active" ui-sref="settings.profile"><i class="glyphicon glyphicon-cog"></i></a></li>
+            <li><a href="/"><i class="glyphicon glyphicon-off"></i></a></li></ul>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" ui-view></main>
+
+    <script type="text/ng-template" id="templates/dashboard.html">
+      <app-panel title="'Dashboard'">
+        <blockquote>
+          <p>There are three kinds of lies: <strong>lies, damned lies, and statistics.</strong></p>
+          <footer>British Prime Minister Benjamin Disraeli</footer>
+        </blockquote>
+      </app-panel>
+    </script>
+
+    <script type="text/ng-template" id="templates/settings/layout.html">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="list-group">
+            <a class="list-group-item" ui-sref-active="active" ui-sref="settings.profile">Profile</a>
+            <a class="list-group-item" ui-sref-active="active" ui-sref="settings.terms">Terms</a>
+            <a class="list-group-item" ng-class="{active: state.current.name.indexOf('product') != -1}" ui-sref="settings.products">Products</a>
+          </div>
+        </div>
+        <div class="col-md-9" ui-view="">
+        </div>
+      </div>
+    </script>
+
+    <script type="text/ng-template" id="templates/settings/terms.html">
+      <app-panel title="'Terms'">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </app-panel>
+    </script>
+
+    <script type="text/ng-template" id="templates/settings/profile.html">
+      <app-panel title="'Profile'">
+        <div class="role">
+          <div class="form-group">
+            <label class="control-label" for="profile-name">Name</label>
+            <input type="text" class="form-control" id="profile-name" ng-model="profile.name" />
+          </div>
+          <button class="btn btn-default" ng-click="save();">Save</button>
+          <span class="saved" ng-show="saved">Saved!</span>
+        </div>
+      </app-panel>
+    </script>
+
+    <script type="text/ng-template" id="templates/settings/products/list.html">
+      <app-panel title="'Products'">
+        <a ui-sref="settings.new_product" class="btn btn-default">Add new product</a>
+        <hr>
+        <table class="table">
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Price</td>
+            </tr>
+          </thead>
+          <tr ng-repeat="product in products">
+            <td><a ui-sref-active="active" ui-sref="settings.product({id: product.id})">{{product.name}}</a></td>
+            <td>${{product.price}}</td>
+          </tr>
+        </table>
+      </app-panel>
+    </script>
+
+    <script type="text/ng-template" id="templates/settings/products/form.html">
+      <app-panel title="'Product'">
+        <div class="role">
+          <div class="form-group">
+            <label class="control-label" for="product-name">Name</label>
+            <input type="text" class="form-control" id="product-name" ng-model="product.name" />
+            <label class="control-label text-danger" for="product-price">{{product.$errors.name}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="product-price">Price</label>
+            <input type="text" class="form-control" id="product-name" ng-model="product.price" />
+            <label class="control-label text-danger" for="product-price">{{product.$errors.price}}</label>
+          </div>
+          <button class="btn btn-primary" ng-click="save();" ng-disabled="product.$saving">Save</button>
+            or <a ui-sref="settings.products">Cancel</a>
+          <div ng-if="product.id">
+            <hr />
+            <button class="btn btn-danger" ng-click="destroy();">Destroy</button>
+          </div>
+        </div>
+      </app-panel>
+    </script>
+
+    <script src="javascripts/lodash.js"></script>
+    <script src="javascripts/angular.js"></script>
+    <script src="javascripts/angular-ui-router.js"></script>
+    <script src="javascripts/application.js"></script>
+    <script src="javascripts/done.js"></script>
+    <script src="javascripts/development.js"></script>
+  </body>
+</html>
