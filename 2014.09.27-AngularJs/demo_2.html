@@ -26,26 +26,22 @@
       </div>
     </header>
 
-    <main class="container" ng-controller="MessagesCtrl">
+    <main class="container">
 
-      <div class="panel panel-default">
+      <div class="panel panel-default" ng-controller="MessagesCtrl">
         <div class="panel-heading">
           <h5>Messages</h5>
         </div>
-        <div class="panel-body">
-          <ul class="media-list">
-            <li class="media" ng-repeat="message in messages">
-              <div class="media-body">
-                <p>{{message.text}}</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="panel-footer">
-          <form role="form" ng-submit="post();">
-            <input type="text" class="form-control" placeholder="New message..." ng-model="message">
-          </form>
-        </div>
+        <ul class="media-list panel-body">
+          <li class="media" ng-repeat="message in messages">
+            <div class="media-body">
+              <p>{{message.text}}</p>
+            </div>
+          </li>
+        </ul>
+        <form class="panel-footer" ng-submit="post();">
+          <input type="text" class="form-control" placeholder="New message..." ng-model="message">
+        </form>
       </div>
 
     </main>

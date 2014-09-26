@@ -38,20 +38,16 @@
           </form>
           <h5>Messages</h5>
         </div>
-        <div class="panel-body" ng-controller="MessagesCtrl">
-          <ul class="media-list">
-            <li class="media" ng-repeat="message in messages | filter:search">
-              <div class="media-body">
-                <p>{{message.text}}</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="panel-footer" ng-controller="PostCtrl">
-          <form role="form" ng-submit="post();">
-            <input type="text" class="form-control" placeholder="New message..." ng-model="message">
-          </form>
-        </div>
+        <ul class="media-list panel-body" ng-controller="MessagesCtrl">
+          <li class="media" ng-repeat="message in messages | filter:search">
+            <div class="media-body">
+              <p>{{message.text}}</p>
+            </div>
+          </li>
+        </ul>
+        <form class="panel-footer" ng-controller="PostCtrl" ng-submit="post();">
+          <input type="text" class="form-control" placeholder="New message..." ng-model="message">
+        </form>
       </div>
 
     </main>
