@@ -3,7 +3,7 @@
 window.app = angular.module('Demo', []);
 
 app.controller('MessagesCtrl', function($scope) {
-  $scope.messages = []
+  $scope.messages = [];
   $scope.message = '';
   $scope.post = function() {
     if ($scope.message.length) {
