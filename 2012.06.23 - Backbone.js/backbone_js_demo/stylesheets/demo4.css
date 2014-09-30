@@ -1,0 +1,25 @@
+html { background: #eeeeee; }
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.4em; background: #eeeeee; color: #333333; }
+
+.todo-app { width: 480px; margin: 0 auto 40px; background: white; padding: 20px; box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0; }
+.todo-app h1 { font-size: 36px; font-weight: bold; text-align: center; padding: 20px 0 30px 0; line-height: 1; text-shadow: #eee 0 1px 0; }
+.todo-app input { width: 466px; font-size: 24px; line-height: 1.4em; border: 0; outline: none; padding: 6px; border: 1px solid #999999; box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset; }
+.todo-app input::-webkit-input-placeholder { font-style: italic; }
+.todo-app ul { margin-top: 10px; }
+.todo-app ul li .display { position: relative; padding: 12px 25px 11px 30px; border-bottom: 1px solid #cccccc; line-height: 1.1em; font-size: 24px; }
+.todo-app ul li .display input[type="checkbox"] { position: absolute; top: 18px; left: 5px; width: 20px; height: 20px; }
+.todo-app ul li .display button { position: absolute; right: 5px; top: 15px; display: none; cursor: pointer; width: 20px; height: 20px; border: 0; background: url("../images/destroy.png") no-repeat 0 0; }
+.todo-app ul li .display span { display: block; }
+.todo-app ul li .display button:hover { background-position: 0 -20px; }
+.todo-app ul li .edit { display: none; }
+.todo-app ul li.editing .display { display: none; }
+.todo-app ul li.editing .edit { display: block; }
+.todo-app ul li .edit input[type="text"] { width: 444px; font-size: 24px; line-height: 1.6em; border: 0; outline: none; padding: 10px 7px 10px 27px; border: 1px solid #999999; box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset; }
+.todo-app ul li.done .display { text-decoration: line-through; color: #777777; }
+.todo-app ul li:hover .display button { display: block; }
+.todo-app footer { overflow: hidden; margin-top: 10px; color: #777777; }
+.todo-app footer span { float: left; }
+.todo-app footer span strong { font-weight: bold; color: #333333; }
+.todo-app footer a { float: right; color: #777777; font-size: 12px; }
+.todo-app footer a:visited { color: #777777; }
+.todo-app footer a:hover { color: #336699; }

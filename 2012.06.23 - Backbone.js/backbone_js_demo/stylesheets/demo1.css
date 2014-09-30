@@ -1,0 +1,13 @@
+.buttons { text-align: center; padding: 20px 0; background: -webkit-linear-gradient(top, #dddddd, #a1a1a1); text-shadow: 0 1px 0 #EEE; border-bottom: 1px solid #888888; }
+.buttons span { cursor: pointer; background-image: -webkit-linear-gradient(top, #f7f7f7, #bababa); box-shadow: 0 1px 0 #dddddd; padding: 5px 10px; text-decoration: none; border: 1px solid #3B3B3B; color: black; outline: 0; text-shadow: 0 1px 0 #EEE; border-image: initial; font-size: 50px; width: 40px; display: inline-block; text-align: center; -webkit-user-select: none; -moz-user-select: none; }
+.buttons span:hover,
+.buttons span:focus { box-shadow: 0 1px 0 #dddddd, inset 3px -3px 15px #f7f7f7, inset -3px -3px 15px #f7f7f7; }
+.buttons span:active { box-shadow: 0 1px 0 #dddddd, inset 3px -3px 15px #bababa, inset -3px -3px 15px $end-color, inset -3px 3px 15px #bababa; background: #f7f7f7; }
+.buttons span:first-child { border-radius: 10px 0 0 10px; border-right: 0px; }
+.buttons span:last-child { border-radius: 0 10px 10px 0; }
+
+section { width: 1000px; margin: 40px auto 0; -webkit-user-select: none; }
+
+.display { background: white; padding: 8px 0px 15px; width: 100px; height: 50px; overflow: hidden; border: 2px solid #ddd; border-radius: 20px; box-shadow: 0 0 6px rgba(0, 0, 0, 0.5); font-size: 50px; text-align: center; text-shadow: 0 0 4px #555; -webkit-user-select: none; -moz-user-select: none; }
+
+.display {  margin: 0 auto; }
