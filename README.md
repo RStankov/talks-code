@@ -6,3 +6,4 @@ Demo code from my talks
 * [Angular.js](https://github.com/RStankov/talks-code/tree/master/2014.05.07 - AngularJs) presented on 2014.05.07 at [PlovdivConf](http://plovdivconf.com/)
 * [Code Smells and Refactoring](https://github.com/RStankov/talks-code/tree/master/2013.07.20 - Code Smells and Refactoring) presented on 2013.07.20 at [VarnaConf](http://varnaconf.com/)
 * [Backbone.js](https://github.com/RStankov/talks-code/tree/master/2012.06.23 - Backbone) presented on 2012.06.23 at [SofiaJs User group](http://sofiajs.org/) meet up
+* [Backbone.js](https://github.com/RStankov/talks-code/tree/master/2012.02.17 - Backbone) presented on 2012.02.17 at company brown bag lunch

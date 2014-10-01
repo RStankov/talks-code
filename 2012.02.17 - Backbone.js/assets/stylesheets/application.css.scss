@@ -1,0 +1,71 @@
+@import "compass/css3";
+@import "compass/reset";
+@import "compass/utilities/general/clearfix";
+
+@mixin button {
+  font: Arial, sans-serif;
+  margin: 0;
+  margin-top: 10px;
+  padding: 5px 7px 6px 7px;
+  cursor: pointer;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+
+  &:hover, &:focus { @include opacity(0.8); text-decoration: underline; }
+  &:active { @include opacity(0.5); text-decoration: underline; }
+}
+
+body {
+  font: 11px Arial, sans-serif;
+  line-height: 15px;
+  background-color: #FFFFFF;
+  color: #1C1C1C;
+}
+
+button { padding: 0px; margin: 0px; border: none; background: none; cursor: pointer; font-family: Helvetica, Arial sans-serif; }
+
+#looks {
+  width: 880px;
+  margin: 30px auto;
+
+  h1 { text-transform: uppercase;  margin-bottom: 30px; }
+
+  > .buttons { padding-top: 20px; margin-top: 60px; border-top: 1px solid black; text-align: right; }
+  > .buttons input { font: 14 Arial, sans-serif; margin-top: 10px; padding: 9px 13px 10px 13px; cursor: pointer; background: black; color: white; text-transform: uppercase; border: 0; outline: 0; }
+  > .buttons input:hover,
+  > .buttons input:focus { text-decoration: underline; }
+  > .buttons input:active { @include opacity(0.8); text-decoration: underline; }
+
+  > button { padding: 20px; font-weight: bold; font-size: 20px; border: 1px dashed black; background: white; }
+  > button:hover { @include opacity(0.5);  }
+
+  article { @include clearfix; margin-bottom: 30px; width: 890px; }
+  article .image-wrapper { position: relative; width: 422px; height: 632px; background: #eee; border: 1px dashed black; }
+  article .image-wrapper mark { position: absolute; padding: 10px 14px; background: black; color: white; cursor: pointer; }
+  article > button { @include button; }
+
+  aside { float: right; width: 440px; }
+  aside header { position: relative; padding-left: 200px; height: 145px; }
+  aside header button { position: absolute; top: 0; left: 0; width: 174px; height: 145px; text-indent: -9999px; background: url("/assets/add_pin_note.png"); }
+  aside header button:hover { @include opacity(0.8); }
+  aside header h4 { width: 170px; font: bold 19px Helvetica, Arial, sans-serif; }
+  aside header p { margin: 10px 0; }
+  aside header strong { font-weight: bold; text-transform: uppercase; }
+
+  section { position: relative; min-height: 47px; padding: 30px 0 0 65px; margin-top: 30px; border-top: 1px solid #ddd; }
+  section mark { position: absolute; top: 30px; left: 0px; padding: 14px 17px; background: black; color: white; font: bold 10px Helvetica, Arial, sans-serif; }
+  section .actions { position: absolute; top: 30px; right: 0px; color: #ddd; }
+  section .actions button { text-transform: uppercase; color: #000; text-decoration: underline; font-size: 10px;  }
+  section .actions button:hover { text-decoration: none; }
+  section strong {  display: block; margin-bottom: 5px; text-transform: uppercase; font-weight: bold; }
+  section label { display: block; margin-bottom: 10px; text-transform: uppercase; }
+  section textarea,
+  section input { display: block; width: 360px; padding: 5px; border: 1px solid #ddd; }
+  section textarea { height: 60px; overflow: auto; resize: vertical; }
+  section .error { border: 1px solid red; }
+  section .buttons { font-size: 10px; margin-top: 20px; text-align: right; }
+  section .buttons [data-cancel] { margin-right: 10px; text-transform: uppercase; color: #aaaaaa; }
+  section .buttons [data-cancel]:hover { text-decoration: underline; }
+  section .buttons [data-save] { @include button; }
+}

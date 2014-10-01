@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    title Title
+    link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css"
+  body
+    #looks
+      h1 Upload Looks:
+      button data-add-look="true" + Add Look
+      .buttons
+        input type="submit" value="Save"
+      div data-inputs="true"
+
+    script type="text/template" id="template-look"
+      aside
+        header
+          button data-add-pin="true" Add pin note
+          h4 Please describe the details of your design: *
+          p ADD pin-notes and DRAG them to the spots you want to describe.
+          strong Need help?
+
+      .image-wrapper
+      button data-delete-look="true" Remove
+
+    script type="text/template" id="template-pin"
+      mark {{number}}
+
+    script type="text/template" id="template-pin-form"
+      label
+        | Title *:
+        input data-attribute="title" type="text" value="{{title}}"
+      label
+        | Short description *:
+        textarea data-attribute="body" {{body}}
+      .buttons
+        button data-cancel="true" Cancel
+        button data-save="true" Save
+
+    script type="text/template" id="template-pin-display"
+      strong {{title}}
+      p {{body}}
+      .actions
+        button data-edit="true" Edit
+        '  |
+        button data-delete="true" Delete
+
+    script src="/assets/application.js"
