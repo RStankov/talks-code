@@ -1,0 +1,10 @@
+<div class="question">
+  <h1>Сигурни ли сте, че искате да изтриете тази снимка?</h1>
+  <p>
+    <%= image_tag @image.file.url %>
+  </p>
+  <%= form_for @image, :html =>{ :method => :delete } do |form| %>
+    <%= form.submit "Да", :class => "button" %>
+    <%= link_to "Не", images_path, :class => "button" %>
+  <% end %>
+</div>

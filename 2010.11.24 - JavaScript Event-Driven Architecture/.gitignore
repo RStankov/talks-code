@@ -1,0 +1,16 @@
+.DS_Store
+log/*
+log/production.log
+log/development.log
+log/test.log
+tmp/**/*
+config/database.yml
+db/schema.rb
+db/*.sqlite3
+db/backups/**/*
+public/files/**/*
+public/system/**/*
+coverage/*
+.bundle
+.bundle/*
+.bundle/**/*

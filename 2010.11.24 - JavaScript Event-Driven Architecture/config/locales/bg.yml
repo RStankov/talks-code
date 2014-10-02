@@ -1,0 +1,12 @@
+bg:
+  activerecord:
+    models:
+      image: "Снимка"
+
+    attributes:
+      image:
+        file: "файл"
+
+    errors:
+      image:
+        cant_be_uploaded: "Трябва да прикачите снимка"

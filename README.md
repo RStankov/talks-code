@@ -7,3 +7,4 @@ Demo code from my talks
 * [Code Smells and Refactoring](https://github.com/RStankov/talks-code/tree/master/2013.07.20 - Code Smells and Refactoring) presented on 2013.07.20 at [VarnaConf](http://varnaconf.com/)
 * [Backbone.js](https://github.com/RStankov/talks-code/tree/master/2012.06.23 - Backbone) presented on 2012.06.23 at [SofiaJs User group](http://sofiajs.org/) meet up
 * [Backbone.js](https://github.com/RStankov/talks-code/tree/master/2012.02.17 - Backbone) presented on 2012.02.17 at company brown bag lunch
+* [JavaScript Event-Driven Architecture](https://github.com/RStankov/talks-code/tree/master/2010.11.24 - JavaScript Event-Driven Architecture) presented on 2010.11.24 at [OpenFest](http://openfest.org/)

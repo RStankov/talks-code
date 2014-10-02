@@ -1,0 +1,3 @@
+asset_root: public
+load_path:
+  - app/javascripts

@@ -1,0 +1,10 @@
+<div id="images_widget">
+  <%= form_for Image.new, :html => { :multipart => true} do |f| %>
+    <%= raw "<strong>#{alert}</strong>" if alert %>
+    <%= f.file_field :file %>
+    <%= f.submit "Добави снимка" %>
+  <% end %>
+  <ol data-sortable-url="<%= reorder_images_path %>">
+    <%= render @images %>
+  </ol>
+</div>
