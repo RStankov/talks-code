@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-karma": "latest",
+    "karma": "latest",
+    "karma-phantomjs-launcher": "latest",
+    "karma-mocha-reporter": "latest",
+    "karma-mocha": "latest"
+  }
+}
