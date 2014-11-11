@@ -15,17 +15,6 @@ module.exports = function(config) {
     // reporter for displaying test results
     reporters: ['mocha'],
 
-    // list of files / patterns to load in the browser
-    files: [
-      __dirname + '../../../bower_components/jquery/dist/jquery.js',
-      __dirname + '../../../bower_components/chai/chai.js',
-      __dirname + '../../../bower_components/chai-jquery/chai-jquery.js',
-      __dirname + '../../../bower_components/sinon/sinon.js',
-      __dirname + '../../../bower_components/sinon-chai/lib/sinon-chai.js',
-      __dirname + '/test_helper.js',
-      __dirname + '/test.js'
-    ],
-
     // list of files / patterns to exclude
     exclude: [],
 
