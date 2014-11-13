@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Test Runner</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./bower_components/mocha/mocha.css" />
+
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
+    <script src="./bower_components/mocha/mocha.js"></script>
+    <script src="./bower_components/chai/chai.js"></script>
+    <script src="./bower_components/chai-jquery/chai-jquery.js"></script>
+    <script src="./bower_components/sinon/sinon.js"></script>
+    <script src="./bower_components/sinon-chai/lib/sinon-chai.js"></script>
+
+    <script src="./shared/test_helper.js"></script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script>
+      function requireExternal(url, callback) {
+        var script = document.createElement("script");
+
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = url;
+
+        if (typeof(callback) != "undefined") {
+          var loaded = false;
+          script.onload = script.onreadystatechange = function() {
+            if ((this.readyState && this.readyState !== "complete" && this.readyState !== "loaded") || loaded) {
+              return false;
+            }
+
+            this.onload = this.onreadystatechange = null;
+
+            loaded = true;
+
+            callback.call(this);
+          };
+        }
+        document.getElementsByTagName('head')[0].appendChild(script);
+      };
+
+      (function(){
+        var pair = location.search.substr(1).split('&').filter(function(value) {
+          return value.split('=')[0] === 'example';
+        })[0] || "";
+
+        var example = pair.split('=')[1] || 'final';
+        requireExternal('./examples/' + example + '/test.js', function() {
+          mocha.run();
+        });
+      })();
+    </script>
+  </body>
+</html>
