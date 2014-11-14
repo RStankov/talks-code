@@ -6,9 +6,22 @@ window.expect = chai.expect;
 
 window.app = {};
 
+app.Events = {
+  trigger: function(eventName, arg) {
+    var events = this.events || {};
+    (events[eventName] || []).forEach(function(handler) {
+      handler(arg);
+    });
+  },
+  on: function(eventName, handler) {
+    this.events || (this.events = {});
+    this.events[eventName] || (this.events[eventName] = [])
+    this.events[eventName].push(handler);
+  }
+}
+
 app.Search = function() {
   this.loading = false;
-  this.events = [];
 };
 
 app.Search.prototype.newQuery = function(query) {
@@ -26,16 +39,7 @@ app.Search.prototype.newQuery = function(query) {
   });
 }
 
-app.Search.prototype.trigger = function(eventName, arg) {
-  (this.events[eventName] || []).forEach(function(handler) {
-    handler(arg);
-  });
-}
-
-app.Search.prototype.on = function(eventName, handler) {
-  this.events[eventName] || (this.events[eventName] = [])
-  this.events[eventName].push(handler);
-}
+$.extend(app.Search.prototype, app.Events);
 
 app.initSearch = function(search) {
   search || (search = new app.Search());
@@ -59,7 +63,15 @@ app.initSearch = function(search) {
 
 
 describe("searching", function() {
-  var form, input, results, server;
+  var form, input, results, search;
+
+  function FakeSearch() {}
+
+  FakeSearch.prototype.newQuery = function(query) {
+    this.query = query;
+  }
+
+  $.extend(FakeSearch.prototype, app.Events);
 
   beforeEach(function() {
     form    = $('<form id="search-form"></form>').appendTo('body');
@@ -68,58 +80,42 @@ describe("searching", function() {
 
     input.val('query');
 
-    var data = [
-      {id: 1, name: 'Phone'},
-      {id: 2, name: 'Tablet'}
-    ]
-
-    server = sinon.fakeServer.create();
-    server.respondWith("GET", "/search?q=query", JSON.stringify(data));
-
-    app.initSearch();
+    search = new FakeSearch;
+    app.initSearch(search);
   });
 
   afterEach(function() {
     form.remove();
-    server.restore();
   })
 
-
-  it("doesn't search on empty query", function() {
-    input.val('');
+  it("sets new query on submit", function() {
+    input.val('query');
     form.submit();
 
-    expect(server.requests.length).to.eq(0);
-  });
-
-  it("guards against double submit", function() {
-    form.submit();
-    form.submit();
-
-    expect(server.requests.length).to.eq(1);
+    expect(search.query).to.eq('query');
   });
 
   it("adds loading class during search", function() {
-    form.submit();
+    search.trigger('query:new');
 
     expect(results).to.have.class('loading');
   });
 
   it("removes loading class after search", function() {
-    form.submit();
-
-    server.respond();
+    search.trigger('query:results', []);
 
     expect(results).not.to.have.class('loading');
   });
 
   it("renders results", function() {
-    form.submit();
-
-    server.respond();
+    search.trigger('query:results', [
+      {id: 1, name: 'Phone'},
+      {id: 2, name: 'Tablet'}
+    ]);
 
     expect(results).to.have.descendants('a[href="/products/1"]')
     expect(results).to.have.descendants('a[href="/products/2"]')
   });
 });
+
 
