@@ -1,11 +1,11 @@
 {
   "name": "TODO",
   "devDependencies": {
-    "chai": "*",
-    "mocha": "*",
+    "chai": "1.10.0",
+    "mocha": "2.0.1",
     "sinon": "git@github.com:MessageSystems/bower-sinon.git",
-    "sinon-chai": "*",
-    "jquery": "*",
-    "chai-jquery": "*"
+    "sinon-chai": "2.6.0",
+    "jquery": "2.1.1",
+    "chai-jquery": "2.0.0"
   }
 }
