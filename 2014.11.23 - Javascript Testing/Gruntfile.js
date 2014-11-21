@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
   'use strict';
 
-  var example = grunt.option('example') || 'final';
+  var example = grunt.option('example') || 'search_5_extracted_object_with_test';
 
   grunt.initConfig({
     karma: {
@@ -14,7 +14,7 @@ module.exports = function(grunt) {
           __dirname + '/bower_components/sinon/sinon.js',
           __dirname + '/bower_components/sinon-chai/lib/sinon-chai.js',
           __dirname + '/shared/test_helper.js',
-          __dirname + '/examples/' + example + '/test.js'
+          __dirname + '/examples/' + example + '.js'
         ]
       },
       build: {

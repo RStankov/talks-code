@@ -46,7 +46,7 @@
         })[0] || "";
 
         var example = pair.split('=')[1] || 'final';
-        requireExternal('./examples/' + example + '/test.js', function() {
+        requireExternal('./examples/' + example + '.js', function() {
           mocha.run();
         });
       })();
