@@ -89,6 +89,6 @@ suite("searching", function() {
 
     assert(results.find('a').length == 2);
     assert(results.find('a[href="/products/1"]').length == 1);
-    assert(results.find('a[href="/products/1"]').length == 1);
+    assert(results.find('a[href="/products/2"]').length == 1);
   });
 });

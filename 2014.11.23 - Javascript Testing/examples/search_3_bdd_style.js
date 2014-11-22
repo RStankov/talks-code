@@ -28,7 +28,7 @@ app.initSearch = function() {
 };
 
 
-describe("searching", function() {
+describe("Search", function() {
   var form, input, results, server;
 
   beforeEach(function() {

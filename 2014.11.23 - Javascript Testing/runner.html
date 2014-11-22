@@ -45,7 +45,7 @@
           return value.split('=')[0] === 'example';
         })[0] || "";
 
-        var example = pair.split('=')[1] || 'final';
+        var example = pair.split('=')[1] || 'search_5_extracted_object_with_test';
         requireExternal('./examples/' + example + '.js', function() {
           mocha.run();
         });

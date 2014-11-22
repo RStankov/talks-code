@@ -62,7 +62,7 @@ app.initSearch = function(search) {
 };
 
 
-describe("searching", function() {
+describe("Search", function() {
   var form, input, results, search;
 
   function FakeSearch() {}
