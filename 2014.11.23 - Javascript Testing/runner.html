@@ -46,6 +46,7 @@
         })[0] || "";
 
         var example = pair.split('=')[1] || 'search_5_extracted_object_with_test';
+        document.title = example.replace(/_/g, ' ');
         requireExternal('./examples/' + example + '.js', function() {
           mocha.run();
         });
