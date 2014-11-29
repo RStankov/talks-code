@@ -21,7 +21,7 @@ class Calculation
   end
 
   def to_s
-    “#{expression} = #{value}"
+    "#{expression} = #{value}"
   end
 
   private
