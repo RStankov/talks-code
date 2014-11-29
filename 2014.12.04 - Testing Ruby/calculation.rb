@@ -1,0 +1,63 @@
+class Calculation
+  OPERATIONS = {
+    '+' => ->(a, b) { a + b },
+    '-' => ->(a, b) { a - b },
+    '*' => ->(a, b) { a * b },
+    '/' => ->(a, b) { a / b }
+  }
+
+  def self.operations
+    OPERATIONS.keys
+  end
+
+  attr_reader :expression
+
+  def initialize(expression)
+    @expression = expression
+  end
+
+  def value
+    @value ||= calculate_value
+  end
+
+  def to_s
+    "#{expression} = #{value}"
+  end
+
+  private
+
+  def calculate_value
+    a, operand, b = expression.split ' '
+
+    operation = OPERATIONS[operand]
+    raise "Can't parse expression - #{@expression}" unless operation
+
+    operation.call a.to_f, b.to_f
+  end
+end
+
+
+system 'clear'
+
+puts '-' * 20
+puts '~ Fancy Calculator ~'
+puts '-' * 20
+puts
+puts 'Supported operations: '
+
+Calculation.operations.each do |operation|
+  puts "  a #{operation} b"
+end
+
+puts
+puts "(type 'exit' for quitting)"
+puts
+
+loop do
+  puts 'calculation:'
+  input = gets.chomp
+  break if input == 'exit'
+
+  puts Calculation.new(input).to_s
+  puts
+end
