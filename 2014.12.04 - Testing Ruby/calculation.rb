@@ -36,28 +36,40 @@ class Calculation
   end
 end
 
+class CLI
+  def initialize(supported_operations)
+    @operations = supported_operations
+  end
 
-system 'clear'
+  def run
+    system 'clear'
 
-puts '-' * 20
-puts '~ Fancy Calculator ~'
-puts '-' * 20
-puts
-puts 'Supported operations: '
+    puts '-' * 20
+    puts '~ Fancy Calculator ~'
+    puts '-' * 20
+    puts
+    puts 'Supported operations: '
 
-Calculation.operations.each do |operation|
-  puts "  a #{operation} b"
+    @operations.each do |operation|
+      puts "  #{operation}"
+    end
+
+    puts
+    puts "(type 'exit' for quitting)"
+    puts
+
+    loop do
+      puts 'calculation:'
+      input = gets.chomp
+      break if input == 'exit'
+
+      puts yield(input)
+      puts
+    end
+  end
 end
 
-puts
-puts "(type 'exit' for quitting)"
-puts
-
-loop do
-  puts 'calculation:'
-  input = gets.chomp
-  break if input == 'exit'
-
-  puts Calculation.new(input).to_s
-  puts
+if __FILE__ == $0
+  cli = CLI.new Calculation.operations.map { |o| "a #{o} b"}
+  cli.run { |input| Calculation.new(input).to_s }
 end
