@@ -1,0 +1,1 @@
+export const COMMENT_COUNT_UPDATED = Symbol('COMMENT_COUNT_UPDATED');
