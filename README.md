@@ -1,6 +1,7 @@
 Demo code from my talks
 =================================
 
+* [React.js Tips and Tricks](https://github.com/RStankov/talks-code/tree/master/2015.05.20 - React Tips and Tricks) presented on 2015.05.20 at [ICN.Bg](https://www.icn.bg/).
 * [Testing Ruby](https://github.com/RStankov/talks-code/tree/master/2014.12.04 - Testing Ruby) presented on 2014.12.04 at [Hack Bulgaria](https://hackbulgaria.com/)'s [Core Ruby](http://ruby.hackbulgaria.com/) course
 * [Javascript Testing](https://github.com/RStankov/talks-code/tree/master/2014.11.23 - Javascript Testing) presented on 2014.11.23 at [js.next();](http://www.jsnext.net/)
 * [Angular.js](https://github.com/RStankov/talks-code/tree/master/2014.09.27 - AngularJs) presented on 2014.09.27 at Microsoft User Group Meetup
