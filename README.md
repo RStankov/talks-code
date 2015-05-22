@@ -1,6 +1,7 @@
 Demo code from my talks
 =================================
 
+* [Starving ActiveRecord](https://github.com/RStankov/talks-code/tree/master/2015.05.21%20-%20Starving%20ActiveRecord) presented on 2015.05.22 at [Hack Bulgaria](https://hackbulgaria.com/)'s [Ruby on Rails](http://rails.hackbulgaria.com/) course
 * [React.js Tips and Tricks](https://github.com/RStankov/talks-code/tree/master/2015.05.20 - React Tips and Tricks) presented on 2015.05.20 at [ICN.Bg](https://www.icn.bg/).
 * [Testing Ruby](https://github.com/RStankov/talks-code/tree/master/2014.12.04 - Testing Ruby) presented on 2014.12.04 at [Hack Bulgaria](https://hackbulgaria.com/)'s [Core Ruby](http://ruby.hackbulgaria.com/) course
 * [Javascript Testing](https://github.com/RStankov/talks-code/tree/master/2014.11.23 - Javascript Testing) presented on 2014.11.23 at [js.next();](http://www.jsnext.net/)
