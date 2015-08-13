@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title>GraphQL Demo</title>
+    <style>
+      .panel {
+        margin: 20px 40px;
+        text-align: center;
+      }
+
+      .panel-column {
+        display: inline-block;
+        vertical-align: top;
+        width: 48%;
+        height: 70%;
+      }
+
+      .panel-column + .panel-column {
+        margin-left: 40px;
+      }
+
+      button {
+        width: 100%;
+        font-size: 20px;
+      }
+
+      pre,
+      textarea {
+        font-size: 20px;
+        overflow: scroll;
+        border: 1px solid black;
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="panel">
+      <div class="panel-column">
+        <textarea id="query"></textarea>
+      </div>
+      <div class="panel-column">
+        <pre id="result"></pre>
+      </div>
+    </div>
+    <div class="panel">
+      <button id="submit">Submit</button>
+    </div>
+    <script>
+      function query(query) {
+        return new Promise(function(resolve, reject) {
+          var xhr = new XMLHttpRequest();
+
+          xhr.onload = function() {
+            var status = xhr.status === 1223 ? 204 : xhr.status
+            if (status < 100 || status > 599) {
+              reject(new TypeError('Network request failed'))
+              return
+            }
+
+            var body = 'response' in xhr ? xhr.response : xhr.responseText;
+            resolve(body);
+          }
+
+          xhr.onerror = function() {
+            reject(new TypeError('Network request failed'))
+          }
+
+          xhr.open('post', '/graphql', true);
+
+          xhr.setRequestHeader('Accept', 'application/json');
+          xhr.setRequestHeader('Content-Type', 'application/graphql');
+
+          xhr.send(query);
+        })
+      }
+
+      document.getElementById('submit').addEventListener('click', function() {
+        var textarea = document.getElementById('query');
+        query(textarea.value).then(function(response) {
+          document.getElementById('result').innerHTML = response;
+        }).catch(function(error){
+          alert(error);
+        });
+      });
+    </script>
+  </body>
+</html>

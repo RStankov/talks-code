@@ -1,0 +1,27 @@
+{
+  "name": "varnaconf-graphql-demo",
+  "version": "1.0.0",
+  "description": "GraphQL demo code for my talk at VarnaConf 2015",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "graphql": "^0.2.6",
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RStankov/talks-code.git"
+  },
+  "keywords": [
+    "demo"
+  ],
+  "author": "Radoslav Stankov (http://rstankov.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RStankov/talks-code/issues"
+  },
+  "homepage": "https://github.com/RStankov/talks-code#readme"
+}

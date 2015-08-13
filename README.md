@@ -1,6 +1,8 @@
 Demo code from my talks
 =================================
 
+* [GraphQL](https://github.com/RStankov/talks-code/tree/master/2015.08.15%20-%20GraphQL) presented on 2015.08.15 at [VarnaConf](http://varnaconf.com/archive/2015)
+
 * [Starving ActiveRecord](https://github.com/RStankov/talks-code/tree/master/2015.05.21%20-%20Starving%20ActiveRecord) presented on 2015.05.22 at [Hack Bulgaria](https://hackbulgaria.com/)'s [Ruby on Rails](http://rails.hackbulgaria.com/) course
 * [React.js Tips and Tricks](https://github.com/RStankov/talks-code/tree/master/2015.05.20 - React Tips and Tricks) presented on 2015.05.20 at [ICN.Bg](https://www.icn.bg/).
 * [Testing Ruby](https://github.com/RStankov/talks-code/tree/master/2014.12.04 - Testing Ruby) presented on 2014.12.04 at [Hack Bulgaria](https://hackbulgaria.com/)'s [Core Ruby](http://ruby.hackbulgaria.com/) course
