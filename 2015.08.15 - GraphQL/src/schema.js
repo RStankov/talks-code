@@ -65,11 +65,20 @@ var SessionType = new GraphQLObjectType({
         type: GraphQLString,
         description: 'The name of the session'
       },
+      title: {
+        // Deprecation example
+        type: GraphQLString,
+        description: 'The name of the session',
+        deprecated: true,
+        resolve: function(session) {
+          return session.name;
+        }
+      },
       start_at: {
         type: GraphQLString,
         description: 'The starting time of the session'
       },
-      track_id: {
+      track: {
         type: GraphQLInt,
         description: 'The track number of the session'
       },
