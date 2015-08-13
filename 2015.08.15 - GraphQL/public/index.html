@@ -37,6 +37,9 @@
   </head>
   <body>
     <div class="panel">
+      <div class="panel">
+        <select id="examples"><option></option></select>
+      </div>
       <div class="panel-column">
         <textarea id="query"></textarea>
       </div>
@@ -46,6 +49,33 @@
     </div>
     <div class="panel">
       <button id="submit">Submit</button>
+    </div>
+    <div style="display: none" id="example-holder">
+<textarea name="Clear query"></textarea>
+
+<textarea name="Deep nesting">
+{
+  events {
+    id,
+    name,
+    year,
+    sessions {
+      id
+      name
+      speaker {
+        name
+        sessions {
+          name
+          event {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+}
+</textarea>
     </div>
     <script>
       function query(query) {
@@ -78,12 +108,38 @@
 
       document.getElementById('submit').addEventListener('click', function() {
         var textarea = document.getElementById('query');
+
+        if (!textarea.value) {
+          document.getElementById('result').innerHTML = '';
+          return;
+        }
+
         query(textarea.value).then(function(response) {
           document.getElementById('result').innerHTML = response;
         }).catch(function(error){
           alert(error);
         });
       });
+
+      (function() {
+        var select = document.getElementById('examples');
+        var textareas = Array.prototype.slice.call(document.querySelectorAll('#example-holder textarea'));
+
+        textareas.forEach(function(textarea) {
+          var option = document.createElement('option');
+          option.text = textarea.name;
+
+          select.add(option);
+        });
+
+        select.addEventListener('change', function() {
+          var textarea = textareas.filter(function(textarea) { return textarea.name === select.value })[0];
+          if (textarea) {
+            document.getElementById('query').value = textarea.value;
+            document.getElementById('submit').click();
+          }
+        });
+      })();
     </script>
   </body>
 </html>
