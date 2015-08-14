@@ -195,13 +195,13 @@ module.exports = new GraphQLSchema({
             type: new GraphQLNonNull(GraphQLInt)
           },
           name: {
-            type: new GraphQLNonNull(GraphQLString)
+            type: GraphQLString
           },
           year: {
-            type: new GraphQLNonNull(GraphQLString)
+            type: GraphQLString
           },
           date: {
-            type: new GraphQLNonNull(GraphQLString)
+            type: GraphQLString
           },
         },
         resolve: function(_, params) {
