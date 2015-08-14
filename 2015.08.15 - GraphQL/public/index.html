@@ -51,14 +51,14 @@
       <button id="submit">Submit</button>
     </div>
     <div style="display: none" id="example-holder">
-<textarea name="Clear query"></textarea>
+<textarea name="Clear"></textarea>
 
-<textarea name="Deep nesting">
+<textarea name="Query - nested">
 {
   events {
-    id,
-    name,
-    year,
+    id
+    name
+    year
     sessions {
       id
       name
@@ -76,6 +76,149 @@
   }
 }
 </textarea>
+
+<textarea name="Query - find event">
+{
+  event(id: 15) {
+    id
+    name
+    date
+    sessions {
+      id
+    }
+  }
+}
+</textarea>
+
+<textarea name="Query - find session">
+{
+  session(id: 175) {
+    id
+    name
+    start_at
+    speaker {
+      id
+      name
+    }
+  }
+}
+</textarea>
+
+<textarea name="Query - find speaker">
+{
+  speaker(id: 1) {
+    id
+    name
+    sessions {
+      id
+      name
+    }
+  }
+}
+</textarea>
+
+
+<textarea name="Mutation - create event">
+mutation RootMutationType {
+  createEvent(name: "Doblich", year: "2025", date: "05.05") {
+    id
+    name
+  }
+}
+</textarea>
+
+<textarea name="Mutation - update event">
+mutation RootMutationType {
+  updateEvent(id: 16, name: "Dobrich") {
+    id
+    name
+    year
+    date
+  }
+}
+</textarea>
+
+<textarea name="Mutation - destroy event">
+mutation RootMutationType {
+  destroyEvent(id: 16) {
+    id
+    name
+  }
+}
+</textarea>
+
+<textarea name="Mutation - create session">
+mutation RootMutationType {
+  createSession(name: "Test Driven Development", start_at: "0:00", track: 0, speaker_id: 0, event_id: 15) {
+  id
+  }
+}
+</textarea>
+
+<textarea name="Mutation - update session">
+mutation RootMutationType {
+  updateSession(id: 176, name: "Test Driven Development", start_at: "18:30", track: 1, speaker_id: 1, event_id: 15) {
+    id
+    name
+  }
+}
+</textarea>
+
+<textarea name="Mutation - destroy session">
+mutation RootMutationType {
+  destroySession(id: 176) {
+    id
+  }
+}
+</textarea>
+
+<textarea name="Mutation - create speaker">
+mutation RootMutationType {
+  createSpeaker(name: "Test Testers", picture_uuid: "123456") {
+    id
+    name
+  }
+}
+</textarea>
+
+<textarea name="Mutation - update speaker">
+mutation RootMutationType {
+  updateSpeaker(id: 2, name: "Updated name", picture_uuid: "123456") {
+    id
+    name
+  }
+}
+</textarea>
+
+<textarea name="Mutation - destroy speaker">
+mutation RootMutationType {
+  destroySpeaker(id: 2) {
+    id
+    name
+  }
+}
+</textarea>
+
+<textarea name="Introspection">
+{
+  __schema {
+    types {
+      name
+      fields {
+        name
+        type {
+          name
+          kind
+          ofType {
+            name
+            kind
+          }
+        }
+      }
+    }
+  }
+}
+</textarea
     </div>
     <script>
       function query(query) {
