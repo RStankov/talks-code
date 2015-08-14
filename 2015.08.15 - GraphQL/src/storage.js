@@ -36,7 +36,13 @@ Storage.prototype.update = function(values) {
     throw "Can't find object with id - " + id;
   }
 
-  var object = _.extend(this.data[index], values);
+  var object = this.data[index];
+
+  _.each(values, function(value, key) {
+    if (value) {
+      object[key] = value;
+    }
+  });
 
   this.data[index] = object;
 
