@@ -1,6 +1,7 @@
 Demo code from my talks
 =================================
 
+* [Introduction to GraphQL](https://github.com/RStankov/talks-code/tree/master/2015.10.08%20-%20Introduction%20to%20GraphQL) presented on 2015.10.08 at [OpenFest](http://www.openfest.org/2015/bg/programa/)
 * [GraphQL](https://github.com/RStankov/talks-code/tree/master/2015.08.15%20-%20GraphQL) presented on 2015.08.15 at [VarnaConf](http://varnaconf.com/archive/2015)
 
 * [Starving ActiveRecord](https://github.com/RStankov/talks-code/tree/master/2015.05.21%20-%20Starving%20ActiveRecord) presented on 2015.05.22 at [Hack Bulgaria](https://hackbulgaria.com/)'s [Ruby on Rails](http://rails.hackbulgaria.com/) course
