@@ -1,7 +1,7 @@
 GraphQL
 =======
 
-Demo code for my "Graphql" tack at [VarnaConf 2015](http://varnaconf.com/archive/2015)
+Demo code for my "Graphql" talk at [VarnaConf 2015](http://varnaconf.com/archive/2015)
 
 ### Slides
 
