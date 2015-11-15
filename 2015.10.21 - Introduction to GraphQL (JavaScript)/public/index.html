@@ -1,0 +1,246 @@
+<html>
+  <head>
+    <title>GraphQL Demo</title>
+    <link rel=stylesheet href=graphiql.css>
+    <script src="./react.min.js"></script>
+    <script src="./graphiql.js"></script>
+  </head>
+  <body>
+    <script src="./demo.js"></script>
+<textarea name="Clear"></textarea>
+
+<textarea name="Query - nested">
+{
+  events {
+    id
+    name
+    year
+    sessions {
+      id
+      name
+      speaker {
+        name
+        sessions {
+          name
+          event {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+}
+</textarea>
+
+<textarea name="Query - find event">
+{
+  event(id: 15) {
+    id
+    name
+    date
+    sessions {
+      id
+    }
+  }
+}
+</textarea>
+
+<textarea name="Query - find session">
+{
+  session(id: 175) {
+    id
+    name
+    start_at
+    speaker {
+      id
+      name
+    }
+  }
+}
+</textarea>
+
+<textarea name="Query - find speaker">
+{
+  speaker(id: 1) {
+    id
+    name
+    sessions {
+      id
+      name
+    }
+  }
+}
+</textarea>
+
+
+<textarea name="Mutation - create event">
+mutation RootMutationType {
+  createEvent(name: "Doblich", year: "2025", date: "05.05") {
+    id
+    name
+  }
+}
+</textarea>
+
+<textarea name="Mutation - update event">
+mutation RootMutationType {
+  updateEvent(id: 16, name: "Dobrich") {
+    id
+    name
+    year
+    date
+  }
+}
+</textarea>
+
+<textarea name="Mutation - destroy event">
+mutation RootMutationType {
+  destroyEvent(id: 16) {
+    id
+    name
+  }
+}
+</textarea>
+
+<textarea name="Mutation - create session">
+mutation RootMutationType {
+  createSession(name: "Test Driven Development", start_at: "0:00", track: 0, speaker_id: 0, event_id: 15) {
+  id
+  }
+}
+</textarea>
+
+<textarea name="Mutation - update session">
+mutation RootMutationType {
+  updateSession(id: 176, name: "Test Driven Development", start_at: "18:30", track: 1, speaker_id: 1, event_id: 15) {
+    id
+    name
+  }
+}
+</textarea>
+
+<textarea name="Mutation - destroy session">
+mutation RootMutationType {
+  destroySession(id: 176) {
+    id
+  }
+}
+</textarea>
+
+<textarea name="Mutation - create speaker">
+mutation RootMutationType {
+  createSpeaker(name: "Test Testers", picture_uuid: "123456") {
+    id
+    name
+  }
+}
+</textarea>
+
+<textarea name="Mutation - update speaker">
+mutation RootMutationType {
+  updateSpeaker(id: 2, name: "Updated name", picture_uuid: "123456") {
+    id
+    name
+  }
+}
+</textarea>
+
+<textarea name="Mutation - destroy speaker">
+mutation RootMutationType {
+  destroySpeaker(id: 2) {
+    id
+    name
+  }
+}
+</textarea>
+
+<textarea name="Introspection">
+{
+  __schema {
+    types {
+      name
+      fields {
+        name
+        type {
+          name
+          kind
+          ofType {
+            name
+            kind
+          }
+        }
+      }
+    }
+  }
+}
+</textarea
+    </div>
+    <script>
+      /*
+      function query(query) {
+        return new Promise(function(resolve, reject) {
+          var xhr = new XMLHttpRequest();
+
+          xhr.onload = function() {
+            var status = xhr.status === 1223 ? 204 : xhr.status
+            if (status < 100 || status > 599) {
+              reject(new TypeError('Network request failed'))
+              return
+            }
+
+            var body = 'response' in xhr ? xhr.response : xhr.responseText;
+            resolve(body);
+          }
+
+          xhr.onerror = function() {
+            reject(new TypeError('Network request failed'))
+          }
+
+          xhr.open('post', '/graphql', true);
+
+          xhr.setRequestHeader('Accept', 'application/json');
+          xhr.setRequestHeader('Content-Type', 'application/graphql');
+
+          xhr.send(query);
+        })
+      }
+
+      document.getElementById('submit').addEventListener('click', function() {
+        var textarea = document.getElementById('query');
+
+        if (!textarea.value) {
+          document.getElementById('result').innerHTML = '';
+          return;
+        }
+
+        query(textarea.value).then(function(response) {
+          document.getElementById('result').innerHTML = response;
+        }).catch(function(error){
+          alert(error);
+        });
+      });
+
+      (function() {
+        var select = document.getElementById('examples');
+        var textareas = Array.prototype.slice.call(document.querySelectorAll('#example-holder textarea'));
+
+        textareas.forEach(function(textarea) {
+          var option = document.createElement('option');
+          option.text = textarea.name;
+
+          select.add(option);
+        });
+
+        select.addEventListener('change', function() {
+          var textarea = textareas.filter(function(textarea) { return textarea.name === select.value })[0];
+          if (textarea) {
+            document.getElementById('query').value = textarea.value;
+            document.getElementById('submit').click();
+          }
+        });
+        })();
+        */
+    </script>
+  </body>
+</html>
