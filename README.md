@@ -1,7 +1,8 @@
 Demo code from my talks
 =================================
 
-* <a href="https://github.com/RStankov/talks-code/tree/master/2015.10.21%20-%20Introduction%20to%20GraphQL%20(JavaScript)">Introduction to GraphQL (Javascript)</a>  presented on 2015.10.21 at [js.talks();](www.jstalks.net)
+* <a href="https://github.com/RStankov/talks-code/tree/master/2016.03.27%20-%20React%20and%20Redux">React and Redux</a>  presented on 2016.03.27 at [Tech Talks](http://techtalks.bg/events/pure-javascript/)
+* <a href="https://github.com/RStankov/talks-code/tree/master/2015.10.21%20-%20Introduction%20to%20GraphQL%20(JavaScript)">Introduction to GraphQL (Javascript)</a>  presented on 2015.10.21 at [js.talks();](http://www.jstalks.net)
 * [Introduction to GraphQL (Ruby)](https://github.com/RStankov/talks-code/tree/master/2015.10.08%20-%20Introduction%20to%20GraphQL) presented on 2015.10.08 at [OpenFest](http://www.openfest.org/2015/bg/programa/)
 * [GraphQL](https://github.com/RStankov/talks-code/tree/master/2015.08.15%20-%20GraphQL) presented on 2015.08.15 at [VarnaConf](http://varnaconf.com/archive/2015)
 
