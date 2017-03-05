@@ -1,6 +1,7 @@
 Demo code from my talks
 =================================
 
+* <a href="https://github.com/RStankov/talks-code/tree/master/2017.03.07%20-%20Forms%20with%20React">Forms with React</a> presented on 2017.03.07 at [React.Sofia](https://www.meetup.com/React-Sofia/)
 * <a href="https://github.com/RStankov/talks-code/tree/master/2016.07.18%20-%20Integrating%20Redux%20with%20React">Integrating Redux with React</a> presented on 2016.07.18 at [PlovdivConf](http://plovdivconf.com/archive/2016)
 * <a href="https://github.com/RStankov/talks-code/tree/master/2016.03.27%20-%20React%20and%20Redux">React and Redux</a>  presented on 2016.03.27 at [Tech Talks](http://techtalks.bg/events/pure-javascript/)
 * <a href="https://github.com/RStankov/talks-code/tree/master/2015.10.21%20-%20Introduction%20to%20GraphQL%20(JavaScript)">Introduction to GraphQL (Javascript)</a>  presented on 2015.10.21 at [js.talks();](http://www.jstalks.net)

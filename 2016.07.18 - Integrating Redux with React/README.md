@@ -1,7 +1,7 @@
 React and Redux
 ===============
 
-Integrating Redux with React " talk at [PlovdivConf 2016](http://plovdivconf.com/archive/2016).
+Integrating Redux with React talk at [PlovdivConf 2016](http://plovdivconf.com/archive/2016).
 
 ### Slides
 
