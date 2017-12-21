@@ -17,8 +17,20 @@ yarn install
 yarn start
 ```
 
-#### Running tests:
+#### Running unit tests (watch mode):
 
 ```
 yarn test
+```
+
+#### Running unit tests:
+
+```
+CI=true yarn test
+```
+
+#### Running integration tests:
+
+```
+yarn run e2e
 ```

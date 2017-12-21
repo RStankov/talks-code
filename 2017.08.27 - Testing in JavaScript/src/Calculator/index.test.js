@@ -5,9 +5,9 @@ import Memory from './Memory';
 
 describe(Component.name, () => {
   it('renders memory', () => {
-    const component = shallow(<Component />);
+    const component = mount(<Component />);
 
-    expect(component).toContainReact(<Memory>0</Memory>);
+    expect(component.find('[data-test="result"]')).toIncludeText('0');
   });
 
   describe('actions', () => {
@@ -22,25 +22,25 @@ describe(Component.name, () => {
     });
 
     it('can add digits and operands', () => {
-      expect(component).toContainReact(<Memory>1 + 1</Memory>);
+      expect(component.find('[data-test="result"]')).toIncludeText('1 + 1');
     });
 
     it('can sum numbers', () => {
       component.find('[data-test="calculate"]').simulate('click');
 
-      expect(component).toContainReact(<Memory>2</Memory>);
+      expect(component.find('[data-test="result"]')).toIncludeText('2');
     });
 
     it('can remove digits and operands', () => {
       component.find('[data-test="remove"]').simulate('click');
 
-      expect(component).toContainReact(<Memory>1 +</Memory>);
+      expect(component.find('[data-test="result"]')).toIncludeText('1 +');
     });
 
     it('can be reset', () => {
       component.find('[data-test="reset"]').simulate('click');
 
-      expect(component).toContainReact(<Memory>0</Memory>);
+      expect(component.find('[data-test="result"]')).toIncludeText('0');
     });
   });
 });

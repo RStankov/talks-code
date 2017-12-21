@@ -1,32 +1,29 @@
 // little helper to select 'data-test="..."' elements
-const dataTest = s => `[data-test="${s}"]`
-const dt = dataTest
+const dt = s => `[data-test="${s}"]`
 
 describe('Calculator', () => {
   beforeEach(() => {
-    // setup before each test
     cy.visit('/')
   })
 
   it('loads calculator', () => {
     cy
-      .get(dataTest('buttons'))
+      .get(dt('buttons'))
       .should('be.visible')
-      // has 0..9 + "C" + "remove button"
       .find('button')
       .should('have.length', 12)
   })
 
   it('loads operations buttons', () => {
     cy
-      .get(dataTest('operations'))
+      .get(dt('operations'))
       .should('be.visible')
       .find('button')
       .should('have.length', 4)
   })
 
   it('starts with zero', () => {
-    cy.get(dataTest('result')).contains(0)
+    cy.get(dt('result')).contains(0)
   })
 
   it('adds 11 + 23', () => {
