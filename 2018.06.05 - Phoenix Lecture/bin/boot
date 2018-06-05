@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+docker-compose up -d --no-recreate
+
+mix deps.get
+mix ecto.create
+mix ecto.migrate

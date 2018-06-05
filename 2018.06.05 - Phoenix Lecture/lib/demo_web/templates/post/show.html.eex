@@ -1,0 +1,44 @@
+<h2>Show Post</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </li>
+
+  <li>
+    <strong>Content:</strong>
+    <%= @post.content %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: post_path(@conn, :edit, @post) %></span>
+<span><%= link "Back", to: post_path(@conn, :index) %></span>
+
+<h3>Comments</h3>
+
+<div id="comments-list">
+  <%= for comment <- @post.comments do %>
+    <p>
+      <strong><%= comment.author %></strong>: <%= comment.content %>
+    </p>
+  <% end %>
+</div>
+
+<form data-id="<%= @post.id %>" id="comment-form">
+  <p>
+    <label>
+      Author:&nbsp;
+      <input name="author" id="comment-author" type="text" value="" />
+    </label>
+  </p>
+  <p>
+    <label>
+      Comment:&nbsp;
+      <input name="content" id="comment-content" type="text" value="" />
+    </label>
+  </p>
+  <input type="submit" value="Comment" />
+</form>
