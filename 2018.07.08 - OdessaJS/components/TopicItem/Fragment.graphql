@@ -1,0 +1,11 @@
+#import "components/TopicFollowButton/Fragment.graphql"
+#import "components/TopicImage/Fragment.graphql"
+
+fragment TopicItem on Topic {
+  id
+  name
+  slug
+  description
+  ...TopicFollowButton
+  ...TopicImage
+}
