@@ -1,0 +1,3 @@
+## TypeScript
+
+- Avoid using `any`
